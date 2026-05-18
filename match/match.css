@@ -1,0 +1,160 @@
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.auth-redirect {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.auth-redirect a {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Helper to toggle view views */
+.hidden {
+    display: none !important;
+}
+
+/* --- Dark Mode Styles --- */
+body.dark .auth-container {
+    border-color: white;
+}
+
+body.dark .form-group input {
+    background-color: rgb(50, 50, 50);
+    border-color: white;
+    color: white;
+}
+
+body.dark .btn-submit {
+    background-color: white;
+    color: black;
+}
+
+body.dark .btn-submit:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+body.dark .auth-redirect a {
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2, p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body.dark a{
+    color: white;
+}
+nav {
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navp {
+    color: white;
+}
+
+.navlogin {
+    color: white;
+}
+
+.navdm {
+    border: none;
+    color: white;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+body.dark{
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
