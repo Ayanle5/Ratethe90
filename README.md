@@ -12,6 +12,8 @@ Whether it's a 0-0 slog you suffered through or a Champions League classic you'l
 
 ---
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49efae0b-c923-408a-b773-f344fab85555/deploy-status)](https://app.netlify.com/projects/ratethe90/deploys)
+
 ## Features
 
 - 📋 **Match Logging** — Log any match from any competition, past or present
