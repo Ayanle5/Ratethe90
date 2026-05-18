@@ -1,12 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1, h2, p {
@@ -27,12 +28,17 @@ nav {
     justify-content: space-between;
 }
 
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .navp {
     color: white;
 }
 
 .navlogin {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
 }
 
@@ -48,4 +54,5 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    text-align: center;
 }
