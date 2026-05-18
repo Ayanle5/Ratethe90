@@ -19,6 +19,9 @@ a {
     color: black;
 }
 
+body.dark a{
+    color: white;
+}
 nav {
     background-color: black;
     margin-bottom: 10px;
@@ -55,4 +58,8 @@ nav div {
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
+}
+body.dark{
+    background-color: rgb(37, 37, 37);
+    color: white;
 }
