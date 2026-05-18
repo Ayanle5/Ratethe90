@@ -5,7 +5,6 @@ import {
     createUserWithEmailAndPassword 
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-// TODO: Replace with your actual Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAGxcEq6lQWapbUHJitP3POcbdBG6biCy4",
   authDomain: "ratethe90.firebaseapp.com",
@@ -19,23 +18,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// DOM Elements for switching views
 const loginBox = document.getElementById('login-box');
 const signupBox = document.getElementById('signup-box');
 const toSignupLink = document.getElementById('to-signup');
 const toLoginLink = document.getElementById('to-login');
 const messageEl = document.getElementById('auth-message');
 
-// DOM Elements for form handling
 const loginForm = document.getElementById('login-form');
 const signupForm = document.getElementById('signup-form');
 
-// --- View Switching Logic ---
 toSignupLink.addEventListener('click', (e) => {
     e.preventDefault();
     loginBox.classList.add('hidden');
     signupBox.classList.remove('hidden');
-    messageEl.textContent = ""; // Clear any outstanding messages
+    messageEl.textContent = ""; 
 });
 
 toLoginLink.addEventListener('click', (e) => {
@@ -45,7 +41,6 @@ toLoginLink.addEventListener('click', (e) => {
     messageEl.textContent = ""; 
 });
 
-// --- Sign In Logic ---
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('login-email').value;
@@ -70,7 +65,6 @@ loginForm.addEventListener('submit', (e) => {
         });
 });
 
-// --- Sign Up Logic ---
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('signup-email').value;
@@ -97,7 +91,6 @@ signupForm.addEventListener('submit', (e) => {
         });
 });
 
-// --- Dark Mode Logic ---
 const dmBtn = document.querySelector('.navdm');
 
 if (localStorage.getItem('theme') === 'dark') {
