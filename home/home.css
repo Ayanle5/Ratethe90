@@ -148,13 +148,120 @@ nav div {
     cursor: pointer;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
+
 body.dark{
     background-color: rgb(37, 37, 37);
     color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome {
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+
+.recent-reviews {
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-reviews-label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.review-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.review-card {
+  border: 2px solid #000;
+  border-radius: 10px;
+  aspect-ratio: 1;
+}
+
+.add-review {
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.add-review-sub {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+
+.stats {
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 30px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile {
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  flex-shrink: 0;
+}
+
+body.dark .welcome,
+body.dark .recent-reviews,
+body.dark .review-card,
+body.dark .add-review,
+body.dark .stats,
+body.dark .user-profile,
+body.dark .avatar {
+  border-color: rgb(80, 80, 80);
+}
+
+body.dark .recent-reviews-label,
+body.dark .add-review-sub {
+  color: rgb(150, 150, 150);
 }
