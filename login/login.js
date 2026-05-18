@@ -53,7 +53,7 @@ loginForm.addEventListener('submit', (e) => {
         .then(() => {
             messageEl.textContent = "Login Successful! Redirecting...";
             messageEl.style.color = "green";
-            setTimeout(() => { window.location.href = "../match/match.html"; }, 1500);
+            setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
         })
         .catch((error) => {
             messageEl.style.color = "red";
@@ -77,7 +77,7 @@ signupForm.addEventListener('submit', (e) => {
         .then(() => {
             messageEl.textContent = "Account created successfully! Redirecting...";
             messageEl.style.color = "green";
-            setTimeout(() => { window.location.href = "../match/match.html"; }, 1500);
+            setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
         })
         .catch((error) => {
             messageEl.style.color = "red";
