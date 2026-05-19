@@ -284,3 +284,16 @@ body.dark .stats:hover,
 body.dark .user-profile:hover {
     background-color: rgb(50, 50, 50);
 }
+
+.recent-reviews:hover .review-card {
+    background-color: white;
+}
+
+.user-profile:hover .avatar {
+    background-color: white;
+}
+
+body.dark .recent-reviews:hover .review-card,
+body.dark .user-profile:hover .avatar {
+    background-color: rgb(37, 37, 37);
+}
