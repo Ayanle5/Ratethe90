@@ -172,6 +172,8 @@ body.dark{
   font-size: 1.4rem;
 }
 
+
+
 .row {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -264,4 +266,21 @@ body.dark .avatar {
 body.dark .recent-reviews-label,
 body.dark .add-review-sub {
   color: rgb(150, 150, 150);
+}
+
+.welcome:hover,
+.recent-reviews:hover,
+.add-review:hover,
+.stats:hover,
+.user-profile:hover {
+    background-color: rgb(188, 188, 188);
+    transition: background-color 0.2s;
+}
+
+body.dark .welcome:hover,
+body.dark .recent-reviews:hover,
+body.dark .add-review:hover,
+body.dark .stats:hover,
+body.dark .user-profile:hover {
+    background-color: rgb(50, 50, 50);
 }
