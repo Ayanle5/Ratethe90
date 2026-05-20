@@ -65,7 +65,7 @@ nav div {
 
 .profile-card {
   background-color: white;
-  border: 1px solid rgb(220, 220, 220);
+  border: 2.5px solid rgb(9, 9, 9);
   border-radius: 12px;
   padding: 32px;
   display: flex;
@@ -158,6 +158,13 @@ body.dark .edit-btn:hover {
   }
 }
 
-.hidden {
-    display: none !important;
+#editPopup {
+    display: none;
+    background-color: white;
+    border: 2.5px solid black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-radius: 12px;
 }
