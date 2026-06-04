@@ -58,7 +58,6 @@ loginForm.addEventListener('submit', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            console.log(userCredential.user.uid)
             messageEl.textContent = "Login Successful! Redirecting...";
             messageEl.style.color = "green";
             setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
@@ -84,7 +83,11 @@ signupForm.addEventListener('submit', (e) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log(userCredential)
+            const uid = userCredential.user.uid;
+            setDoc(doc(db, "users", uid), {
+                username: username,
+                email: email
+                });
             messageEl.textContent = "Account created successfully! Redirecting...";
             messageEl.style.color = "green";
             setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
