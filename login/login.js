@@ -68,13 +68,15 @@ loginForm.addEventListener('submit', (e) => {
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('signup-email').value;
+    const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
 
     messageEl.textContent = "Creating account...";
     messageEl.style.color = "gray";
 
     createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
+        .then((userCredential) => {
+            console.log("hey")
             messageEl.textContent = "Account created successfully! Redirecting...";
             messageEl.style.color = "green";
             setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
