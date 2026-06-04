@@ -61,7 +61,7 @@ loginForm.addEventListener('submit', (e) => {
             console.log(userCredential.user.uid)
             messageEl.textContent = "Login Successful! Redirecting...";
             messageEl.style.color = "green";
-            //setTimeout(() => { window.location.href = "../home/home.html"; }, 15000);
+            setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
         })
         .catch((error) => {
             messageEl.style.color = "red";
