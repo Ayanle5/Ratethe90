@@ -15,8 +15,15 @@ const firebaseConfig = {
   measurementId: "G-VC6101WBRV"
 };
 
+import {
+    getFirestore,
+    doc,
+    setDoc
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 const loginBox = document.getElementById('login-box');
 const signupBox = document.getElementById('signup-box');
