@@ -76,7 +76,7 @@ signupForm.addEventListener('submit', (e) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log("hey")
+            console.log(userCredential)
             messageEl.textContent = "Account created successfully! Redirecting...";
             messageEl.style.color = "green";
             setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
