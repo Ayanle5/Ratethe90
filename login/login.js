@@ -18,7 +18,8 @@ const firebaseConfig = {
 import {
     getFirestore,
     doc,
-    setDoc
+    setDoc,
+    getDoc
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
@@ -74,26 +75,66 @@ loginForm.addEventListener('submit', (e) => {
 
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    const username = document.getElementById('signup-username').value;
+
+    const email = document.getElementById('signup-email').value.trim();
+    const username = document.getElementById('signup-username').value.toLowerCase().trim();
     const password = document.getElementById('signup-password').value;
 
     messageEl.textContent = "Creating account...";
     messageEl.style.color = "gray";
 
-    createUserWithEmailAndPassword(auth, email, password)
+    if (username.length < 3) {
+        messageEl.textContent = "Username must be at least 3 characters.";
+        messageEl.style.color = "red";
+        return;
+    }
+
+    if (username.includes(" ")) {
+        messageEl.textContent = "Username cannot contain spaces.";
+        messageEl.style.color = "red";
+        return;
+    }
+
+    const usernameRef = doc(db, "usernames", username);
+
+    getDoc(usernameRef)
+        .then((usernameSnap) => {
+            if (usernameSnap.exists()) {
+                messageEl.textContent = "Username already taken.";
+                messageEl.style.color = "red";
+                return null;
+            }
+
+            return createUserWithEmailAndPassword(auth, email, password);
+        })
         .then((userCredential) => {
+            if (!userCredential) return null;
+
             const uid = userCredential.user.uid;
-            setDoc(doc(db, "users", uid), {
-                username: username,
-                email: email
-                });
+
+            return Promise.all([
+                setDoc(doc(db, "users", uid), {
+                    username: username,
+                    email: email
+                }),
+                setDoc(doc(db, "usernames", username), {
+                    uid: uid
+                })
+            ]);
+        })
+        .then((result) => {
+            if (!result) return;
+
             messageEl.textContent = "Account created successfully! Redirecting...";
             messageEl.style.color = "green";
-            setTimeout(() => { window.location.href = "../home/home.html"; }, 1500);
+
+            setTimeout(() => {
+                window.location.href = "../home/home.html";
+            }, 1500);
         })
         .catch((error) => {
             messageEl.style.color = "red";
+
             if (error.code === 'auth/email-already-in-use') {
                 messageEl.textContent = "This email is already registered.";
             } else if (error.code === 'auth/weak-password') {
